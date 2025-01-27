@@ -2,14 +2,17 @@
 string? input;
 int number1, number2;
 
-Console.WriteLine("Calculator");
+Console.WriteLine("***********************************");
+Console.WriteLine("Calculator\n");
 Console.WriteLine("Enter first number");
 input = Console.ReadLine();
 number1 = int.Parse(input);
 
-Console.WriteLine("Enter second number");
+Console.WriteLine("\nEnter second number");
+input = Console.ReadLine();
 number2 = int.Parse(input);
 
+Console.Clear();
 Console.WriteLine("What kind of operation would you like to perform?");
 Console.WriteLine("1. Addition");
 Console.WriteLine("2. Subtraction");
