@@ -4,15 +4,6 @@ int number1, number2;
 
 Console.WriteLine("***********************************");
 Console.WriteLine("Calculator\n");
-Console.WriteLine("Enter first number");
-input = Console.ReadLine();
-number1 = int.Parse(input);
-
-Console.WriteLine("\nEnter second number");
-input = Console.ReadLine();
-number2 = int.Parse(input);
-
-Console.Clear();
 Console.WriteLine("What kind of operation would you like to perform?");
 Console.WriteLine("1. Addition");
 Console.WriteLine("2. Subtraction");
@@ -20,6 +11,15 @@ Console.WriteLine("3. Multiplication");
 Console.WriteLine("4. Division");
 Console.WriteLine("5. Modulo Division");
 string? choice = Console.ReadLine();
+Console.Clear();
+
+Console.WriteLine("Enter first number");
+input = Console.ReadLine();
+number1 = int.Parse(input);
+
+Console.WriteLine("\nEnter second number");
+input = Console.ReadLine();
+number2 = int.Parse(input);
 Console.Clear();
 
 switch(choice)
