@@ -1,6 +1,7 @@
 ﻿using System.Data;
 string? input;
-int number1, number2;
+int quantityOfOperations;
+int result = 0;
 
 Console.WriteLine("***********************************");
 Console.WriteLine("Calculator\n");
@@ -13,33 +14,79 @@ Console.WriteLine("5. Modulo Division");
 string? choice = Console.ReadLine();
 Console.Clear();
 
-Console.WriteLine("Enter first number");
-input = Console.ReadLine();
-number1 = int.Parse(input);
-
-Console.WriteLine("\nEnter second number");
-input = Console.ReadLine();
-number2 = int.Parse(input);
-Console.Clear();
-
 switch(choice)
 {
     case "1":
-        Console.WriteLine(number1 + number2);
+        NumberQuantityQuestion();
+        input = Console.ReadLine();
+        Console.Clear();
+
+        quantityOfOperations = int.Parse(input!);
+        for (int i = 1; i <= quantityOfOperations; i++)
+        {
+            input = Console.ReadLine();
+            result += int.Parse(input!);
+        }
+        Console.WriteLine(result);
         break;
     case "2":
-        Console.WriteLine(number1  - number2);
+        NumberQuantityQuestion();
+        input = Console.ReadLine();
+        Console.Clear();
+
+        quantityOfOperations = int.Parse(input!);
+        for (int i = 1; i <= quantityOfOperations; i++)
+        {
+            input = Console.ReadLine();
+            result -= int.Parse(input!);
+        }
+        Console.WriteLine(result);
         break;
     case "3":
-        Console.WriteLine(number1 * number2);
+        NumberQuantityQuestion();
+        input = Console.ReadLine();
+        Console.Clear();
+
+        quantityOfOperations = int.Parse(input!);
+        for (int i = 1; i <= quantityOfOperations; i++)
+        {
+            input = Console.ReadLine();
+            result *= int.Parse(input!);
+        }
+        Console.WriteLine(result);
         break;
     case "4":
-        Console.WriteLine(number1 / number2);
+        NumberQuantityQuestion();
+        input = Console.ReadLine();
+        Console.Clear();
+
+        quantityOfOperations = int.Parse(input!);
+        for (int i = 1; i <= quantityOfOperations; i++)
+        {
+            input = Console.ReadLine();
+            result /= int.Parse(input!);
+        }
+        Console.WriteLine(result);
         break;
     case "5":
-        Console.WriteLine(number1 % number2);
+        NumberQuantityQuestion();
+        input = Console.ReadLine();
+        Console.Clear();
+
+        quantityOfOperations = int.Parse(input!);
+        for (int i = 1; i <= quantityOfOperations; i++)
+        {
+            input = Console.ReadLine();
+            result %= int.Parse(input!);
+        }
+        Console.WriteLine(result);
         break;
     default:
         Console.WriteLine("There no that kind of operation.");
         break;
+}
+
+void NumberQuantityQuestion()
+{
+    Console.WriteLine("On how many number would you like to perform an operation?");
 }
