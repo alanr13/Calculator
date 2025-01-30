@@ -17,71 +17,76 @@ Console.Clear();
 switch(choice)
 {
     case "1":
-        Console.WriteLine("On how many number would you like to perform an operation?");
+        NumberQuantityQuestion();
         input = Console.ReadLine();
         Console.Clear();
 
-        quantityOfOperations = int.Parse(input);
+        quantityOfOperations = int.Parse(input!);
         for (int i = 1; i <= quantityOfOperations; i++)
         {
             input = Console.ReadLine();
-            result += int.Parse(input);
+            result += int.Parse(input!);
         }
         Console.WriteLine(result);
         break;
     case "2":
-        Console.WriteLine("On how many number would you like to perform an operation?");
+        NumberQuantityQuestion();
         input = Console.ReadLine();
         Console.Clear();
 
-        quantityOfOperations = int.Parse(input);
+        quantityOfOperations = int.Parse(input!);
         for (int i = 1; i <= quantityOfOperations; i++)
         {
             input = Console.ReadLine();
-            result -= int.Parse(input);
+            result -= int.Parse(input!);
         }
         Console.WriteLine(result);
         break;
     case "3":
-        Console.WriteLine("On how many number would you like to perform an operation?");
+        NumberQuantityQuestion();
         input = Console.ReadLine();
         Console.Clear();
 
-        quantityOfOperations = int.Parse(input);
+        quantityOfOperations = int.Parse(input!);
         for (int i = 1; i <= quantityOfOperations; i++)
         {
             input = Console.ReadLine();
-            result *= int.Parse(input);
+            result *= int.Parse(input!);
         }
         Console.WriteLine(result);
         break;
     case "4":
-        Console.WriteLine("On how many number would you like to perform an operation?");
+        NumberQuantityQuestion();
         input = Console.ReadLine();
         Console.Clear();
 
-        quantityOfOperations = int.Parse(input);
+        quantityOfOperations = int.Parse(input!);
         for (int i = 1; i <= quantityOfOperations; i++)
         {
             input = Console.ReadLine();
-            result /= int.Parse(input);
+            result /= int.Parse(input!);
         }
         Console.WriteLine(result);
         break;
     case "5":
-        Console.WriteLine("On how many number would you like to perform an operation?");
+        NumberQuantityQuestion();
         input = Console.ReadLine();
         Console.Clear();
 
-        quantityOfOperations = int.Parse(input);
+        quantityOfOperations = int.Parse(input!);
         for (int i = 1; i <= quantityOfOperations; i++)
         {
             input = Console.ReadLine();
-            result %= int.Parse(input);
+            result %= int.Parse(input!);
         }
         Console.WriteLine(result);
         break;
     default:
         Console.WriteLine("There no that kind of operation.");
         break;
+}
+
+void NumberQuantityQuestion()
+{
+    Console.WriteLine("On how many number would you like to perform an operation?");
 }
