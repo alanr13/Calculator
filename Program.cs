@@ -46,6 +46,7 @@ switch(choice)
         NumberQuantityQuestion();
         input = Console.ReadLine();
         Console.Clear();
+        result = 1;
 
         quantityOfOperations = int.Parse(input!);
         for (int i = 1; i <= quantityOfOperations; i++)
