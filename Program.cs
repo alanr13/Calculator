@@ -1,7 +1,7 @@
 ﻿using System.Data;
 string? input;
 int quantityOfOperations;
-int result = 0;
+double result = 0;
 
 Console.WriteLine("***********************************");
 Console.WriteLine("Calculator\n");
@@ -10,7 +10,6 @@ Console.WriteLine("1. Addition");
 Console.WriteLine("2. Subtraction");
 Console.WriteLine("3. Multiplication");
 Console.WriteLine("4. Division");
-Console.WriteLine("5. Modulo Division");
 string? choice = Console.ReadLine();
 Console.Clear();
 
@@ -60,25 +59,13 @@ switch(choice)
         NumberQuantityQuestion();
         input = Console.ReadLine();
         Console.Clear();
+        result = 1;
 
         quantityOfOperations = int.Parse(input!);
         for (int i = 1; i <= quantityOfOperations; i++)
         {
             input = Console.ReadLine();
             result /= int.Parse(input!);
-        }
-        Console.WriteLine(result);
-        break;
-    case "5":
-        NumberQuantityQuestion();
-        input = Console.ReadLine();
-        Console.Clear();
-
-        quantityOfOperations = int.Parse(input!);
-        for (int i = 1; i <= quantityOfOperations; i++)
-        {
-            input = Console.ReadLine();
-            result %= int.Parse(input!);
         }
         Console.WriteLine(result);
         break;
