@@ -1,92 +1,85 @@
-﻿using System.Data;
-string? input;
-int quantityOfOperations;
-int result = 0;
-
-Console.WriteLine("***********************************");
-Console.WriteLine("Calculator\n");
-Console.WriteLine("What kind of operation would you like to perform?");
-Console.WriteLine("1. Addition");
-Console.WriteLine("2. Subtraction");
-Console.WriteLine("3. Multiplication");
-Console.WriteLine("4. Division");
-Console.WriteLine("5. Modulo Division");
-string? choice = Console.ReadLine();
-Console.Clear();
-
-switch(choice)
+﻿string? input;
+bool isFirstNumber = true;
+string? operationType = "n";
+double num;
+double result = 0;
+for (;;)
 {
-    case "1":
-        NumberQuantityQuestion();
+    for(;;)
+    {
+        int value;
         input = Console.ReadLine();
-        Console.Clear();
-
-        quantityOfOperations = int.Parse(input!);
-        for (int i = 1; i <= quantityOfOperations; i++)
+        if(int.TryParse(input, out value))
         {
+            num = int.Parse(input);
+            if(isFirstNumber)
+            {
+                result = num;
+            }
             input = Console.ReadLine();
-            result += int.Parse(input!);
+            if(input == "+" || input == "-" || input == "*" && input != "=")
+            {
+                operationType = input;
+                switch (operationType)
+                {
+                    case "+":
+                        result += Add(num);
+                        break;
+                    case "-":
+                        result -= Subtract(num);
+                        break;
+                    case "*":
+                        result *= Multiply(num);
+                        break;
+                    default:
+                        Console.WriteLine("I don't recognize that sign.");
+                        break;
+                }
+                break;
+            }
+            else if(input == "=")
+            {
+                break;
+            }
         }
-        Console.WriteLine(result);
-        break;
-    case "2":
-        NumberQuantityQuestion();
-        input = Console.ReadLine();
-        Console.Clear();
-
-        quantityOfOperations = int.Parse(input!);
-        for (int i = 1; i <= quantityOfOperations; i++)
+        isFirstNumber = false;
+    }
+    if (input == "=")
+    {
+        switch (operationType)
         {
-            input = Console.ReadLine();
-            result -= int.Parse(input!);
+            case "+":
+                result += Add(num);
+                isFirstNumber = false;
+                break;
+            case "-":
+                result -= Subtract(num);
+                isFirstNumber = false;
+                break;
+            case "*":
+                result *= Multiply(num);
+                isFirstNumber = false;
+                break;
+            default:
+                Console.WriteLine("I don't recognize that sign.");
+                break;
         }
-        Console.WriteLine(result);
         break;
-    case "3":
-        NumberQuantityQuestion();
-        input = Console.ReadLine();
-        Console.Clear();
-
-        quantityOfOperations = int.Parse(input!);
-        for (int i = 1; i <= quantityOfOperations; i++)
-        {
-            input = Console.ReadLine();
-            result *= int.Parse(input!);
-        }
-        Console.WriteLine(result);
-        break;
-    case "4":
-        NumberQuantityQuestion();
-        input = Console.ReadLine();
-        Console.Clear();
-
-        quantityOfOperations = int.Parse(input!);
-        for (int i = 1; i <= quantityOfOperations; i++)
-        {
-            input = Console.ReadLine();
-            result /= int.Parse(input!);
-        }
-        Console.WriteLine(result);
-        break;
-    case "5":
-        NumberQuantityQuestion();
-        input = Console.ReadLine();
-        Console.Clear();
-
-        quantityOfOperations = int.Parse(input!);
-        for (int i = 1; i <= quantityOfOperations; i++)
-        {
-            input = Console.ReadLine();
-            result %= int.Parse(input!);
-        }
-        Console.WriteLine(result);
-        break;
-    default:
-        Console.WriteLine("There no that kind of operation.");
-        break;
+    }
+   
+}
+Console.WriteLine(result);
+double Add(double num)
+{
+    return num + 0;
 }
 
-void NumberQuantityQuestion()
+double Subtract(double num)
 {
-    Console.WriteLine("On how many number would you like to perform an operation?");
+    return num - 0;
+}
+
+double Multiply(double num)
+{
+    return 1 * num;
 }
